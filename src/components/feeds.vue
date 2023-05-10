@@ -5,6 +5,12 @@
         <div class="icon">
           <icon name="home" />
         </div>
+        <div class="icon">
+          <icon name="home" />
+        </div>
+        <div class="icon">
+          <icon name="exit" />
+        </div>
       </template>
       <template #content>
         <ul class="stories">
@@ -21,12 +27,21 @@
   </div>
   <div class="c-feed">
     <div class="x-container">
-      <toggler @onToggle="toggle"/>
-      <div class="comments" v-if="shown">
-        <ul class="comments-list">
-          <li class="comments-item" v-for="n in 5" :key="n"></li>
-            <comment text="Some text" username="John Doe"/>
-        </ul>
+      <div class="stories-item-feed" v-for="story in stories" :key="story.id">
+          <story-user-item
+            :avatar="story.avatar"
+            :username="story.username"
+            @onPress="handlePress(story.id)"
+          />
+        <div class="toggler">
+          <toggler @onToggle="toggle"/>
+          <div class="comments" v-if="shown">
+            <ul class="comments-list">
+              <li class="comments-item" v-for="n in 5" :key="n"></li>
+                <comment text="Some text" username="John Doe"/>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>

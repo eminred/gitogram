@@ -3,6 +3,7 @@
     width: 92px;
     height: 92px;
     overflow: hidden;
+    margin-right: 10px;
 }
 
 
@@ -20,3 +21,13 @@
     text-overflow: ellipsis;
 }
 
+.stories-item-feed {
+    .c-story-user-item {
+        display: flex;
+        align-items: center;
+
+        .username {
+            font-weight: bold;
+        }
+    }
+}
