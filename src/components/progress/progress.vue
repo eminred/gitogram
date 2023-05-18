@@ -8,35 +8,34 @@
 export default {
   data () {
     return {
-        active: false
+      active: false
     }
   },
   emits: ['onFinish'],
   methods: {
     emitOnFinish () {
-        this$emit('onFinish')
+      this$emit('onFinish')
     }
   },
   mounted () {
-    this.$nextTick(() => {
-        this.active = true
+    setTimeout(() => {
+      this.active = true
     })
-    this.$refs.indicator.addEventListener('transitionend', this.emitOnFinish);
+    this.$refs.indicator.addEventListener('transitionend', this.emitOnFinish)
   },
   beforeUnmount () {
-    this.$refs.indicator.removeEventListener('transitionend', this.emitOnFinish);
+    this.$refs.indicator.removeEventListener('transitionend', this.emitOnFinish)
   }
 }
-  </script>
+</script>
 
 <style scoped>
-.c-progress { 
+.c-progress {
     background: rgba(49, 174, 84, 0.3);
     height: 2px;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-
 
 }
 

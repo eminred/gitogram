@@ -2,14 +2,23 @@
   <div class="topline">
     <topline>
       <template #headline>
-        <div class="icon">
+        <div class="header">
+          <div class="header__logo">
+            <a href="/">
+              <img src="../assets/gitogram.svg" alt="" class="">
+            </a>
+          </div>
+          <div class="header__buttons">
+            <a href="#" class="icon">
           <icon name="home" />
-        </div>
-        <div class="icon">
+        </a>
+        <a href="#" class="icon">
           <icon name="home" />
-        </div>
-        <div class="icon">
+        </a>
+        <a href="#" class="icon">
           <icon name="exit" />
+        </a>
+          </div>
         </div>
       </template>
       <template #content>
@@ -25,45 +34,26 @@
       </template>
     </topline>
   </div>
-  <div class="c-feed">
-    <div class="x-container">
-      <div class="stories-item-feed" v-for="story in stories" :key="story.id">
-          <story-user-item
-            :avatar="story.avatar"
-            :username="story.username"
-            @onPress="handlePress(story.id)"
-          />
-        <div class="toggler">
-          <toggler @onToggle="toggle"/>
-          <div class="comments" v-if="shown">
-            <ul class="comments-list">
-              <li class="comments-item" v-for="n in 5" :key="n"></li>
-                <comment text="Some text" username="John Doe"/>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <template>
-  <SliderItem>
-  <h1>
-    Some content here
-  </h1>
-  </SliderItem>
-  </template>
-  <template>
     <div class="x-container">
       <ul class="list">
-        <li class="item" v-for="item in items" :key="item.id"></li>
+        <li class="item" v-for="item in items" :key="item.id">
+          <!--<p>Iterrator work</p>-->
           <feed
             v-bind="getFeedData(item)"
             dark
             />
+            <div class="toggler">
+              <toggler @onToggle="toggle"/>
+              <div class="comments" v-if="shown">
+                <ul class="comments-list">
+                  <li class="comments-item" v-for="n in 5" :key="n"></li>
+                    <comment text="Some text" username="John Doe"/>
+                </ul>
+              </div>
+            </div>
+        </li>
       </ul>
-      <pre>{{ items }}</pre>
     </div>
-  </template>
 </template>
 
 <script>
@@ -71,11 +61,10 @@ import { topline } from '../components/topline'
 import { icon } from '../icons'
 import { storyUserItem } from '../components/storyUserItem'
 import stories from './data.json'
-import { toggler } from '../components/toggler'
-import { comment } from '../components/comment'
-import SliderItem from './SliderItem/SliderItem.vue'
 import * as api from '../api'
 import { feed } from '../components/feed'
+import { toggler } from '../components/toggler'
+import { comment } from '../components/comment'
 
 export default {
   name: 'feeds',
@@ -85,8 +74,7 @@ export default {
     icon,
     storyUserItem,
     toggler,
-    comment,
-    SliderItem
+    comment
   },
   data () {
     return {
@@ -101,11 +89,14 @@ export default {
     },
     getFeedData (item) {
       return {
-        // title: item.name,
-        // description: item.description,
-        // username: item.owner.login,
-        // stars: item.stargazers_count
+        title: item?.name,
+        description: item?.description,
+        username: item?.owner?.login,
+        stars: item?.stargazers_count
       }
+    },
+    handlePress (id) {
+      console.log('Stub', id)
     }
   },
   async created () {

@@ -1,9 +1,9 @@
-import sliderItem from "./SliderItem.vue";
+import sliderItem from './SliderItem.vue'
 
 export default {
-  title: "Slider item",
-  components: { sliderItem },
-};
+  title: 'Slider item',
+  components: { sliderItem }
+}
 
 export const defaultView = () => ({
   components: { sliderItem },
@@ -26,5 +26,5 @@ export const defaultView = () => ({
             <h1>Some content here</h1>
             <h1>Some content here</h1>
         </SliderItem>
-    `,
-});
+    `
+})

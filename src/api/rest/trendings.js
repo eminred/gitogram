@@ -10,7 +10,7 @@ export const getTrendings = (lang = 'javascript') => {
   const formattedDate = [
     weekAgo.getFullYear(),
     addStartingZero(weekAgo.getMonth() + 1),
-    weekAgo.getDate()
+    addStartingZero(weekAgo.getDate())
   ].join('-')
 
   params.append('order', 'desc')

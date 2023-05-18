@@ -2,9 +2,23 @@
     width: 24px;
     height: 25.14px;
     margin-left: 25px;
+    color: black;
 }
 
 .stories {
     display: flex;
     justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    &__buttons{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
 }
