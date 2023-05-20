@@ -42,15 +42,6 @@
             v-bind="getFeedData(item)"
             dark
             />
-            <div class="toggler">
-              <toggler @onToggle="toggle"/>
-              <div class="comments" v-if="shown">
-                <ul class="comments-list">
-                  <li class="comments-item" v-for="n in 5" :key="n"></li>
-                    <comment text="Some text" username="John Doe"/>
-                </ul>
-              </div>
-            </div>
         </li>
       </ul>
     </div>
@@ -63,8 +54,6 @@ import { storyUserItem } from '../components/storyUserItem'
 import stories from './data.json'
 import * as api from '../api'
 import { feed } from '../components/feed'
-import { toggler } from '../components/toggler'
-import { comment } from '../components/comment'
 
 export default {
   name: 'feeds',
@@ -72,14 +61,11 @@ export default {
     feed,
     topline,
     icon,
-    storyUserItem,
-    toggler,
-    comment
+    storyUserItem
   },
   data () {
     return {
       stories,
-      shown: false,
       items: []
     }
   },
@@ -92,7 +78,9 @@ export default {
         title: item?.name,
         description: item?.description,
         username: item?.owner?.login,
-        stars: item?.stargazers_count
+        stars: item?.stargazers_count,
+        avatar: item?.owner?.avatar_url,
+        forks: item?.forks_count
       }
     },
     handlePress (id) {
