@@ -1,11 +1,11 @@
-import avatar from "./avatar.vue";
+import avatar from './avatar.vue'
 
 export default {
-  title: "Аватар пользователя",
+  title: 'Аватар пользователя',
   components: {
-    avatar,
-  },
-};
+    avatar
+  }
+}
 
 export const defaultView = () => ({
   components: { avatar },
@@ -14,9 +14,9 @@ export const defaultView = () => ({
       avatarUrl="https://picsum.photos/300/300"
       nickname="Peter"
     />
-    `,
-});
+    `
+})
 
 defaultView.story = {
-  name: "Стандартный вид",
-};
+  name: 'Стандартный вид'
+}

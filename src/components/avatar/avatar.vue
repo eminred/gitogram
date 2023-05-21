@@ -1,4 +1,4 @@
-<template>  
+<template>
     <div class="avatar">
         <div class="avatar__logo">
             <img src="avatarUrl" alt="" class="avatar__logo-img">
@@ -11,12 +11,12 @@
 
 <script>
 export default {
-  name: "avatar",
+  name: 'avatar',
   props: {
     avatarUrl: String,
-    nickname: String,
-  },
-};
+    nickname: String
+  }
+}
 </script>
 
 <style scoped>
@@ -24,13 +24,13 @@ export default {
     color: #000;
 }
 
-.avatar { 
+.avatar {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-.avatar__logo-img{ 
+.avatar__logo-img{
     height: 44px;
     width: 44px;
     border-radius: 50%;

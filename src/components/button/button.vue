@@ -7,12 +7,12 @@
 <script>
 export default {
   name: 'Button',
-  props: { 
-    hoverText: { 
+  props: {
+    hoverText: {
       type: String
     }
-  }, 
-  computed: { 
+  },
+  computed: {
     withHoverText () {
       return this.hoverText?.length
     }
@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style scoped> 
+<style scoped>
 .button {
     min-width: 270px;
     min-height: 44px;

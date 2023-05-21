@@ -14,7 +14,7 @@ export default {
   emits: ['onFinish'],
   methods: {
     emitOnFinish () {
-      this$emit('onFinish')
+      this.$emit('onFinish')
     }
   },
   mounted () {
