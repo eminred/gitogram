@@ -2,7 +2,7 @@
     <div class="c-stories-slider">
         <div class="stories-container">
             <ul class="stories" ref="slider">
-                <li class="stories_item" v-for="(trending) in thendings" :key="trending.id" ref="item">
+                <li class="stories_item" v-for="(trending) in trendings" :key="trending.id" ref="item">
                     <story-post-item
                     :data="getStoryData(trending)"
                     :active="slideNdx === ndx"

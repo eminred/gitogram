@@ -6,7 +6,6 @@
         <div class="username">{{ username }}</div>
     </button>
 </template>
-
 <script>
 export default {
   props: {

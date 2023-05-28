@@ -46,20 +46,20 @@
 <script>
 import { avatar } from '../avatar'
 import { button } from '../button'
-import { progress } from '../progress'
-import { icon } from '../icons'
-import { placeholder } from '../placeholder'
-import { spinner } from '../spinner'
+// import { progress } from '../progress'
+// import { icon } from '../icons'
+// import { placeholder } from '../placeholder'
+// import { spinner } from '../spinner'
 
 export default {
   name: 'StoryUserItem',
   components: {
     avatar,
-    xButton: button,
-    xProgress: progress,
-    icon,
-    placeholder,
-    spinner
+    xButton: button
+    // xProgress: // progress,
+    // icon,
+    // placeholder,
+    // spinner
   },
   emits: ['onPrevSlide', 'onNextSlide', 'onProgressFinish'],
   props: {
