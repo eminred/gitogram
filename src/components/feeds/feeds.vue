@@ -5,7 +5,7 @@
         <div class="header">
           <div class="header__logo">
             <a href="/">
-              <img src="../assets/gitogram.svg" alt="" class="">
+              <img src="../../assets/gitogram.svg" alt="" class="">
             </a>
           </div>
           <div class="header__buttons">
@@ -23,18 +23,18 @@
       </template>
       <template #content>
         <ul class="stories">
-          <li class="stories-item" v-for="story in stories" :key="story.id">
+          <!-- <li class="stories-item" v-for="story in stories" :key="story.id">
             <story-user-item
               :avatar="story.avatar"
               :username="story.username"
               @onPress="handlePress(story.id)"
           />
-          </li>
-          <li class="stories-item" v-for="{ id, owner, name } in trendings" :key="id">
+          </li> -->
+          <li class="stories-item" v-for="{ id, owner, name } in items" :key="id">
             <story-user-item
-              :src="owner.avatar_url"
+              :avatar_url="owner.avatar_url"
               :username="name"
-              @storyPress="$router.push({name: 'stories', params: {initialSlide: id}})"
+              @onPress="$router.push({name: 'stories', params: {initialSlide: id}})"
           />
           </li>
         </ul>
@@ -55,12 +55,12 @@
 </template>
 
 <script>
-import { topline } from '../components/topline'
-import { icon } from '../icons'
-import { storyUserItem } from '../components/storyUserItem'
+import { topline } from '../topline'
+import { icon } from '../../icons'
+import { storyUserItem } from '../storyUserItem'
 import stories from './data.json'
-import * as api from '../api'
-import { feed } from '../components/feed'
+import * as api from '../../api'
+import { feed } from '../feed'
 
 export default {
   name: 'feeds',

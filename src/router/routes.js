@@ -1,11 +1,11 @@
-// import { feeds } from '../components/feeds.vue'
-import { stories } from '../components/stories/index'
-import { storyPostItem } from '../components/storyPostItem/index'
+import feeds from '../components/feeds/feeds.vue'
+import stories from '../components/stories/stories'
+import storyPostItem from '../components/storyPostItem/storyPostItem'
 
 export default [{
-  // path: '/',
-  // component: feeds,
-  // name: 'feeds'
+  path: '/',
+  component: feeds,
+  name: 'feeds'
 },
 {
   path: '/stories',

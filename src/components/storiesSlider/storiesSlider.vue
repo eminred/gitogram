@@ -39,7 +39,7 @@ export default {
   },
   computed: {
     ...mapState({
-      trendings: state => state.trendings.data
+      trendings: (state) => state.trendings.data
     }),
     activeBtns () {
       if (this.btnsShown === false) return []
