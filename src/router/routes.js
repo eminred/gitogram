@@ -8,7 +8,7 @@ export default [{
   name: 'feeds'
 },
 {
-  path: '/stories',
+  path: '/stories/:initialSlide',
   component: stories,
   name: 'stories'
 },
