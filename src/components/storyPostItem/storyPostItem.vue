@@ -7,8 +7,8 @@
                 </div>
                 <div class="avatar">
                     <avatar
-                    :username="data.username"
-                    :src="data.userAvatar"
+                    :avatarUrl="data.userAvatar"
+                    :nickname="data.username"
                     />
                 </div>
             </div>
@@ -26,7 +26,7 @@
             <div class="button">
                 <x-button>Follow</x-button>
             </div>
-            <template v-if="active">
+            <div v-if="active">
                 <button v-if="btnsShown.includes('next')" class="btn btn-next" @click="$emit('onNextSlide')">
                     <span class="icon">
                         <icon name="arrow" />
@@ -37,9 +37,8 @@
                         <icon name="arrow" />
                     </span>
                 </button>
-            </template>
+            </div>
         </div>
-        <template></template>
     </div>
 </template>
 
@@ -77,6 +76,9 @@ export default {
       required: true,
       default: () => ({})
     }
+  },
+  created () {
+    console.log(this.data)
   }
 }
 </script>

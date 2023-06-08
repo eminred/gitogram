@@ -1,7 +1,7 @@
 <template>
     <div class="avatar">
         <div class="avatar__logo">
-            <img src="avatarUrl" alt="" class="avatar__logo-img">
+            <img :src="avatarUrl" alt="" class="avatar__logo-img">
         </div>
         <div class="avatar__text">
             <p>{{ nickname }}</p>

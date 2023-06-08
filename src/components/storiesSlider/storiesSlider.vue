@@ -1,21 +1,27 @@
 <template>
-    <div class="c-stories-slider">
-        <div class="stories-container">
-            <ul class="stories" ref="slider">
-                <li class="stories_item" v-for="(trending) in trendings" :key="trending.id" ref="item">
-                    <story-post-item
-                    :data="getStoryData(trending)"
-                    :active="slideNdx === ndx"
-                    :loading="slideNdx === ndx && loading"
-                    :btnsShown="activeBtns"
-                    @onNextSlide="handleSlide(ndx + 1)"
-                    @onPrevSlide="handleSlide(ndx - 1)"
-                    @onProgressFinish="handleSlide(ndx + 1)"
-                    />
-                </li>
-            </ul>
-        </div>
+  <div class="c-stories-slider">
+    <div class="stories-container">
+      <ul class="stories" ref="slider">
+        <li
+          class="stories_item"
+          v-for="trending in trendings"
+          :key="trending.id"
+          id="item"
+          ref="item"
+        >
+          <story-post-item
+            :data="getStoryData(trending)"
+            :active="slideNdx === ndx"
+            :loading="slideNdx === ndx && loading"
+            :btnsShown="activeBtns"
+            @onNextSlide="handleSlide(ndx + 1)"
+            @onPrevSlide="handleSlide(ndx - 1)"
+            @onProgressFinish="handleSlide(ndx + 1)"
+          />
+        </li>
+      </ul>
     </div>
+  </div>
 </template>
 
 <script>
@@ -44,7 +50,7 @@ export default {
     activeBtns () {
       if (this.btnsShown === false) return []
       if (this.slideNdx === 0) return ['next']
-      if (this.slideNdx === this.thendings.length - 1) return ['prev']
+      if (this.slideNdx === this.trendings.length - 1) return ['prev']
       return ['next', 'prev']
     }
   },
@@ -66,7 +72,8 @@ export default {
       }
     },
     moveSlider (slideNdx) {
-      const { slider, item } = this.$refs
+      const { slider } = this.$refs
+      const item = document.getElementById('item')
       const slideWidth = parseInt(
         getComputedStyle(item).getPropertyValue('width'),
         10

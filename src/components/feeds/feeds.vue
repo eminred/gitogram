@@ -61,6 +61,7 @@ import { storyUserItem } from '../storyUserItem'
 import stories from './data.json'
 import * as api from '../../api'
 import { feed } from '../feed'
+import { mapState, mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'feeds',
@@ -76,7 +77,20 @@ export default {
       items: []
     }
   },
+  computed: {
+    ...mapState({
+      trendings: state => state.trendings.data,
+      starred: (state) => state.starred.data
+    }),
+    ...mapGetters(['getUnstarredOnly'])
+  },
   methods: {
+    ...mapActions({
+      fetchTrendings: 'trendings/fetchTrendings',
+      fetchStarred: 'starred/fetchStarred',
+      fetchIssuesForRepo: 'starred/fetchIssuesForRepo',
+      authUserByCode: 'auth/authUserByCode'
+    }),
     toggle (isOpened) {
       this.shown = isOpened
     },
@@ -96,6 +110,7 @@ export default {
   },
   async created () {
     try {
+      await this.fetchTrendings()
       const { data } = await api.trendings.getTrendings()
       this.items = data.items
     } catch (error) {
