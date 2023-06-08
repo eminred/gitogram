@@ -29,12 +29,12 @@
             <div v-if="active">
                 <button v-if="btnsShown.includes('next')" class="btn btn-next" @click="$emit('onNextSlide')">
                     <span class="icon">
-                        <icon name="arrow" />
+                        <icon name="leftArrow" />
                     </span>
                 </button>
                 <button v-if="btnsShown.includes('prev')" class="btn btn-prev" @click="$emit('onPrevSlide')">
                     <span class="icon">
-                        <icon name="arrow" />
+                        <icon name="rightArrow" />
                     </span>
                 </button>
             </div>
@@ -45,8 +45,8 @@
 <script>
 import { avatar } from '../avatar'
 import { button } from '../button'
-// import { progress } from '../progress'
-// import { icon } from '../icons'
+import { progress } from '../progress'
+import { icon } from '../../icons'
 // import { placeholder } from '../placeholder'
 // import { spinner } from '../spinner'
 
@@ -54,9 +54,9 @@ export default {
   name: 'StoryUserItem',
   components: {
     avatar,
-    xButton: button
-    // xProgress: // progress,
-    // icon,
+    xButton: button,
+    xProgress: progress,
+    icon
     // placeholder,
     // spinner
   },

@@ -3,6 +3,9 @@
         <header class="header">
             <div class="x-container">
                 <button class="logo">
+                    <a href="/">
+                        <img src="../../assets/gitogram.svg" alt="" class="">
+                    </a>
                     <logo white/>
                 </button>
                 <button class="close-btn">
