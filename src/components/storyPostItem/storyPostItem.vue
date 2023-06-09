@@ -47,7 +47,7 @@ import { avatar } from '../avatar'
 import { button } from '../button'
 import { progress } from '../progress'
 import { icon } from '../../icons'
-// import { placeholder } from '../placeholder'
+import { placeholder } from '../placeholder'
 // import { spinner } from '../spinner'
 
 export default {
@@ -56,8 +56,8 @@ export default {
     avatar,
     xButton: button,
     xProgress: progress,
-    icon
-    // placeholder,
+    icon,
+    placeholder
     // spinner
   },
   emits: ['onPrevSlide', 'onNextSlide', 'onProgressFinish'],

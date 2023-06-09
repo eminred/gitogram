@@ -36,6 +36,8 @@ export default {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    margin-top: 5px;
+    margin-bottom: 5px;
 
 }
 

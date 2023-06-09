@@ -33,6 +33,8 @@ export default {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    margin-left: 50px;
+    margin-top: 7px;
 }
 
 .button:hover {

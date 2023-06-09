@@ -1,5 +1,5 @@
-.c-story-post-iem {
-    height: 664px;
+.c-story-post-item {
+    // height: 664px;
     position: relative;
     transform: scale(0.8);
     width: 376px;
@@ -9,11 +9,7 @@
 }
 
 .content {
-    width: 266px;
-    height: 136px;
+    height: 426px;
+    overflow: auto;
 }
 
-.info {
-    width: 266px;
-    height: 248px;
-}
