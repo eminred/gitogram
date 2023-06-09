@@ -6,7 +6,9 @@
                     <a href="/">
                         <img src="../../assets/gitogram.svg" alt="" class="">
                     </a>
-                    <logo white/>
+                    <logo white
+                    @onPress="$router.push({name: 'feeds'})"
+                    />
                 </button>
                 <button class="close-btn">
                     <icon name="close" />
@@ -22,11 +24,12 @@
 <script>
 import { storiesSlider } from '../storiesSlider'
 import { icon } from '../../icons'
-// import { logo } from '../../assets/gitogram.svg'
+import { logo } from '../../assets/gitogram.svg'
 
 export default {
   name: 'Stories',
-  components: { // logo,
+  components: {
+    logo,
     icon,
     storiesSlider
   }
